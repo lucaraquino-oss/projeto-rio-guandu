@@ -18,7 +18,7 @@ deveriam ser prioridade de restauração e fiscalização?
 ## Fases
 | Fase | Escopo | Prazo | Status |
 |---|---|---|---|
-| 0 | Preparação de ambiente | 3 dias | em andamento |
+| 0 | Preparação de ambiente | 3 dias | concluída |
 | 1 | Recorte e base cartográfica (ANA ottocodificada, 8–15 sub-bacias) | sem. 1–2 | |
 | 2 | Uso do solo no GEE (MapBiomas, cortes 1990/2000/2010/2024) | sem. 3–4 | |
 | 3 | Modelagem estrela e carga no PostGIS | sem. 5 | |
@@ -49,6 +49,9 @@ modelagem hidrológica, aplicação web. Cada um adiciona ~1 mês e nenhum requi
   educacional/alumni da UFV.
 
 ## Estado atual
-Fase 0 concluída até o esqueleto do repositório. Pendentes: subir o contêiner, rodar
-`sql/00_init.sql`, criar o venv, autenticar no GEE e fazer o teste ponta a ponta com a
-malha municipal do IBGE.
+Fase 0 concluída: contêiner PostGIS no ar (schemas `bruto`/`analitico` criados por
+`sql/00_init.sql`), repositório git inicializado com commit inicial, venv Python em
+`.venv/` com as libs do `requirements.txt`, GEE autenticado (projeto GCP
+`swift-hope-299318`) e teste ponta a ponta (IBGE → Python → PostGIS) validado com a
+malha municipal do RJ. Próximo passo: Fase 1 (recorte e base cartográfica da bacia,
+sub-bacias ottocodificadas da ANA).
